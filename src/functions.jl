@@ -435,11 +435,7 @@ function string(x::BigRational; base::Integer = 10, pad::Integer = 1)
                               string(denominator(x); base=base, pad=pad) * ')')
 end
 function show(io::IO, x::BigRational)
-    if get(io, :typeinfo, Any) == BigRational
-        print(io, numerator(x), "//", denominator(x))
-    else
-        print(io, string(x))
-    end
+    print(io, numerator(x), "///", denominator(x))
 end
 
 function read(io::IO, ::Type{BigRational})
